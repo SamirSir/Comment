@@ -1,0 +1,10 @@
+<h1>Welcome Page</h1>
+<h3>You are requested to sign up or login to access our resources</h3>
+<% if current_user %>
+  <%= button_tag(link_to "Sign Out", destroy_user_session_path, method: :delete) %>
+<% else %>
+	<%= button_tag(link_to " Sign in", new_user_session_path, style:'color:blue; font-size:1.5em;') %>
+  <%= button_tag(link_to "Create Account ", new_user_registration_path, style:'color:green; font-size:1.5em;')  %>
+  
+<% end %>
+
